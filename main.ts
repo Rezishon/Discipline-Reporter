@@ -1,3 +1,4 @@
+import { Console } from 'console';
 import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
 
 // Remember to rename these classes and interfaces!
@@ -14,6 +15,9 @@ export default class MyPlugin extends Plugin {
 	settings: MyPluginSettings;
 
 	async onload() {
+		console.log("==========\non loading plugin");
+		console.log("on unloading plugin\n=========");
+		
 		await this.loadSettings();
 
 		this.addRibbonIcon('dice', 'Greet', () => {
