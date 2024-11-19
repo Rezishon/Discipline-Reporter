@@ -15,11 +15,10 @@ export default class MyPlugin extends Plugin {
 	settings: MyPluginSettings;
 
 	async onload() {
-		console.log("==========\non loading plugin");
-		console.log("on unloading plugin\n=========");
 		
 		await this.loadSettings();
-
+		console.log(this.settings.mySetting);
+		
 		this.addRibbonIcon('dice', 'Greet', () => {
 			new Notice('Hello, world!');
 		});
