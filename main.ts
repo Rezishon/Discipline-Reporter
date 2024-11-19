@@ -20,6 +20,8 @@ export default class MyPlugin extends Plugin {
 			new Notice('Hello, world!');
 		});
 
+		// hotreload plugin installed https://github.com/pjeby/hot-reload.git
+
 		// This creates an icon in the left ribbon.
 		const ribbonIconEl = this.addRibbonIcon('dice', 'Sample Plugin', (evt: MouseEvent) => {
 			// Called when the user clicks the icon.
