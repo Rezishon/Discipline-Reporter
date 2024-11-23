@@ -37,6 +37,8 @@ export default class DisciplineReporterPlugin extends Plugin {
 		});
 
 
+		//? hotreload plugin installed https://github.com/pjeby/hot-reload.git
+
 
 		// This adds a status bar item to the bottom of the app. Does not work on mobile apps.
 
