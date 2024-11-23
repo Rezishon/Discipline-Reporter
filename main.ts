@@ -151,6 +151,10 @@ class RoutinesInSetting extends PluginSettingTab {
 				text
 					.setPlaceholder("Enter your routines")
 					.setValue(this.plugin.settings["Your routine"].join(", "))
+					.onChange((value) => {
+						this.plugin.settings["Your routine"] = value
+							.split(",")
+							.map((s) => s.trim());
 					})
 	}
 }
