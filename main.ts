@@ -150,6 +150,7 @@ class RoutinesInSetting extends PluginSettingTab {
 			.addText((text) =>
 				text
 					.setPlaceholder("Enter your routines")
+					.setValue(this.plugin.settings["Your routine"].join(", "))
 					})
 	}
 }
