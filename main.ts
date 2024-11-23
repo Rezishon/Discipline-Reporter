@@ -80,6 +80,11 @@ class Files extends Modal {
 	constructor(app: App) {
 		super(app);
 	}
+	async CreateRoutinesTrackingFile(): Promise<void> {
+		await this.app.vault.create(
+			".obsidian/plugins/Discipline-Reporter/.Routines-Tracking-file",
+			"this is data to that file"
+		);
 	}
 
 	}
