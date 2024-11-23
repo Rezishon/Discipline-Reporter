@@ -156,5 +156,11 @@ class RoutinesInSetting extends PluginSettingTab {
 							.split(",")
 							.map((s) => s.trim());
 					})
+			)
+			.addButton((btn) => {
+				btn.onClick(async () => {
+					await this.plugin.saveSettings();
+				}).setIcon("save");
+			});
 	}
 }
