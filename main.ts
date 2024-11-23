@@ -82,7 +82,7 @@ export default class DisciplineReporterPlugin extends Plugin {
 			await this.loadData()
 		);
 	}
-	
+
 	async saveSettings() {
 		this.settings["Your routine"] = this.settings["Your routine"].filter(
 			(x) => x.length != 0
