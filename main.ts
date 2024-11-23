@@ -145,6 +145,8 @@ class RoutinesInSetting extends PluginSettingTab {
 		containerEl.empty();
 
 		new Setting(containerEl)
+			.setName("Your routines")
+			.setDesc('Add your routine and separate them with " , "')
 			.addText((text) =>
 				text
 					})
