@@ -11,6 +11,8 @@ import {
 } from "obsidian";
 
 
+interface DisciplineReporterSettings {
+	"Your routine": string[];
 }
 
 };
