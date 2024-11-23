@@ -68,6 +68,10 @@ export default class DisciplineReporterPlugin extends Plugin {
 	}
 
 	async saveSettings() {
+		this.settings["Your routine"] = this.settings["Your routine"].filter(
+			(x) => x.length != 0
+		);
+
 		await this.saveData(this.settings);
 	}
 }
