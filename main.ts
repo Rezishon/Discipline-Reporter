@@ -149,6 +149,7 @@ class RoutinesInSetting extends PluginSettingTab {
 			.setDesc('Add your routine and separate them with " , "')
 			.addText((text) =>
 				text
+					.setPlaceholder("Enter your routines")
 					})
 	}
 }
