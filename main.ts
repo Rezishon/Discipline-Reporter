@@ -19,6 +19,8 @@ const DEFAULT_SETTINGS: DisciplineReporterSettings = {
 	"Your routine": [],
 };
 
+export default class DisciplineReporterPlugin extends Plugin {
+	settings: DisciplineReporterSettings;
 
 	async onload() {
 		await this.loadSettings();
