@@ -98,6 +98,23 @@ class Files extends Modal {
 	}
 }
 
+// class SampleModal extends Modal {
+// 	constructor(app: App) {
+// 		super(app);
+// 	}
+
+// 	CreateRoutinesFile() {
+// 		this.app.vault.create("test.md", "this is a test file");
+// 		const { contentEl } = this;
+// 		contentEl.setText("Woah!");
+// 	}
+
+// 	onClose() {
+// 		const { contentEl } = this;
+// 		contentEl.empty();
+// 	}
+// }
+
 class RoutinesInSetting extends PluginSettingTab {
 	plugin: DisciplineReporterPlugin;
 
