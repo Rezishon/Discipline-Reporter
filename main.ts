@@ -19,11 +19,14 @@ const DEFAULT_SETTINGS: DisciplineReporterSettings = {
 	"Your routine": [],
 };
 
+//#endregion
+
 export default class DisciplineReporterPlugin extends Plugin {
 	settings: DisciplineReporterSettings;
 
 	async onload() {
 		await this.loadSettings();
+		this.addSettingTab(new RoutinesInSetting(this.app, this));
 
 		this.addRibbonIcon("dice", "Greet", () => {
 			new Notice("Hello, world!");
