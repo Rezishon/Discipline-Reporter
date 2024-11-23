@@ -15,6 +15,8 @@ interface DisciplineReporterSettings {
 	"Your routine": string[];
 }
 
+const DEFAULT_SETTINGS: DisciplineReporterSettings = {
+	"Your routine": [],
 };
 
 
