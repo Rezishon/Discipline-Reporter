@@ -10,6 +10,7 @@ import {
 	Setting,
 } from "obsidian";
 
+//#region Plugin Setting
 
 interface DisciplineReporterSettings {
 	"Your routine": string[];
@@ -25,8 +26,14 @@ export default class DisciplineReporterPlugin extends Plugin {
 	settings: DisciplineReporterSettings;
 
 	async onload() {
+		//#region App Main Starter Jobs
+
 		await this.loadSettings();
 		this.addSettingTab(new RoutinesInSetting(this.app, this));
+
+		//#endregion
+
+		//#region Ribbon Icon Setting
 
 		this.addRibbonIcon("dice", "Greet", () => {
 			new Notice("Hello, world!");
@@ -36,13 +43,18 @@ export default class DisciplineReporterPlugin extends Plugin {
 			);
 		});
 
+		//#endregion
 
 		//? hotreload plugin installed https://github.com/pjeby/hot-reload.git
 
+		//#region Status Bar Setting
 
 		// This adds a status bar item to the bottom of the app. Does not work on mobile apps.
 		this.addStatusBarItem().setText("Hi");
 
+		//#endregion
+
+		//#region Commands
 
 		this.addCommand({
 			id: "open-routine-recorder-file",
@@ -50,11 +62,15 @@ export default class DisciplineReporterPlugin extends Plugin {
 			callback: () => new Files(this.app).CreateRoutinesTrackingFile(),
 		});
 
+		//#endregion
 
+		//#region Interval
 
 		this.registerInterval(
 			window.setInterval(() => console.log("setInterval"), 5 * 60 * 1000)
 		);
+
+		//#endregion
 	}
 
 	onunload() {}
@@ -66,7 +82,7 @@ export default class DisciplineReporterPlugin extends Plugin {
 			await this.loadData()
 		);
 	}
-
+	
 	async saveSettings() {
 		this.settings["Your routine"] = this.settings["Your routine"].filter(
 			(x) => x.length != 0
