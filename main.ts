@@ -101,6 +101,7 @@ class Files extends Modal {
 class RoutinesInSetting extends PluginSettingTab {
 	plugin: DisciplineReporterPlugin;
 
+	constructor(app: App, plugin: DisciplineReporterPlugin) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}
