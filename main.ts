@@ -30,6 +30,10 @@ export default class DisciplineReporterPlugin extends Plugin {
 
 		this.addRibbonIcon("dice", "Greet", () => {
 			new Notice("Hello, world!");
+			this.app.vault.create(
+				"pluginTestFile.md",
+				"this is data to that file"
+			);
 		});
 
 
