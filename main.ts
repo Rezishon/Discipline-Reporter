@@ -41,6 +41,8 @@ export default class DisciplineReporterPlugin extends Plugin {
 
 
 		// This adds a status bar item to the bottom of the app. Does not work on mobile apps.
+		this.addStatusBarItem().setText("Hi");
+
 
 		this.addCommand({
 		});
