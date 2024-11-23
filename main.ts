@@ -76,6 +76,7 @@ export default class DisciplineReporterPlugin extends Plugin {
 	}
 }
 
+class Files extends Modal {
 	constructor(app: App) {
 		super(app);
 	}
