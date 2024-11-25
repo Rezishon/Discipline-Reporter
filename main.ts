@@ -62,7 +62,7 @@ export default class DisciplineReporterPlugin extends Plugin {
 		this.addCommand({
 			id: "open-routine-recorder-file",
 			name: "Open routine recorder file",
-			callback: () => new Files(this.app).CreateRoutinesTrackingFile(),
+			callback: () => files.CreateRoutinesTrackingFile(),
 		});
 
 		//#endregion
