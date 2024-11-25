@@ -118,8 +118,8 @@ class Files extends Modal {
 
 	async OpenRoutinesTrackingFile(): Promise<void> {}
 
-	//* async RoutinesTrackingFileFormat(): Promise<void> {}
-	//* Also add a interface for it. It would be cool
+	async RoutinesTrackingFileFormat(): Promise<string> {
+	}
 
 	async CloseRoutinesTrackingFile(): Promise<void> {
 		//* save the data in tracking file
