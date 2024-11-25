@@ -134,6 +134,9 @@ class Files extends Modal {
 		//* build the report
 		//* delete tracking file
 	}
+
+	async DeleteRoutinesTrackingFile(): Promise<void> {
+	}
 }
 
 // class SampleModal extends Modal {
