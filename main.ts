@@ -136,10 +136,14 @@ class Files extends Modal {
 	}
 
 	async DeleteRoutinesTrackingFile(): Promise<void> {
+		if (
+			await this.app.vault.adapter.exists(this.routinesTrackingFilePath)
+		) {
 			await this.app.vault.delete(
 				this.app.vault.getAbstractFileByPath(
 					this.routinesTrackingFilePath
 				)!
+			);
 		}
 	}
 }
