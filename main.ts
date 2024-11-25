@@ -132,7 +132,7 @@ class Files extends Modal {
 	async CloseRoutinesTrackingFile(): Promise<void> {
 		//* save the data in tracking file
 		//* build the report
-		//* delete tracking file
+		this.DeleteRoutinesTrackingFile();
 	}
 
 	async DeleteRoutinesTrackingFile(): Promise<void> {
