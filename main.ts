@@ -96,6 +96,9 @@ export default class DisciplineReporterPlugin extends Plugin {
 }
 
 class Files extends Modal {
+	setting: DisciplineReporterSettings;
+	routinesTrackingFilePath: string;
+
 	constructor(
 		app: App,
 		settings: DisciplineReporterSettings,
