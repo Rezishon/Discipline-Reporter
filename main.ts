@@ -105,7 +105,10 @@ class Files extends Modal {
 		routinesTrackingFilePath: string
 	) {
 		super(app);
+		this.setting = settings;
+		this.routinesTrackingFilePath = routinesTrackingFilePath;
 	}
+
 	async CreateRoutinesTrackingFile(): Promise<void> {
 		await this.app.vault.create(
 			".obsidian/plugins/Discipline-Reporter/.Routines-Tracking-file",
