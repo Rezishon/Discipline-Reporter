@@ -96,7 +96,11 @@ export default class DisciplineReporterPlugin extends Plugin {
 }
 
 class Files extends Modal {
-	constructor(app: App) {
+	constructor(
+		app: App,
+		settings: DisciplineReporterSettings,
+		routinesTrackingFilePath: string
+	) {
 		super(app);
 	}
 	async CreateRoutinesTrackingFile(): Promise<void> {
