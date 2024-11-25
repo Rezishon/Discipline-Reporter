@@ -27,6 +27,7 @@ export default class DisciplineReporterPlugin extends Plugin {
 
 	async onload() {
 		//#region App Main Starter Jobs
+		const routinesTrackingFilePath: string = "file2.md";
 
 		await this.loadSettings();
 		this.addSettingTab(new RoutinesInSetting(this.app, this));
