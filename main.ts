@@ -13,11 +13,11 @@ import {
 //#region Plugin Setting
 
 interface DisciplineReporterSettings {
-	"Your routine": string[];
+	"Your routines": string[];
 }
 
 const DEFAULT_SETTINGS: DisciplineReporterSettings = {
-	"Your routine": [],
+	"Your routines": [],
 };
 
 //#endregion
@@ -150,9 +150,9 @@ class RoutinesInSetting extends PluginSettingTab {
 			.addText((text) =>
 				text
 					.setPlaceholder("Enter your routines")
-					.setValue(this.plugin.settings["Your routine"].join(", "))
+					.setValue(this.plugin.settings["Your routines"].join(", "))
 					.onChange((value) => {
-						this.plugin.settings["Your routine"] = value
+						this.plugin.settings["Your routines"] = value
 							.split(",")
 							.map((s) => s.trim());
 					})
