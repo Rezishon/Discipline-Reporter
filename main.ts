@@ -32,6 +32,12 @@ export default class DisciplineReporterPlugin extends Plugin {
 		await this.loadSettings();
 		this.addSettingTab(new RoutinesInSetting(this.app, this));
 
+		let files = new Files(
+			this.app,
+			this.settings,
+			routinesTrackingFilePath
+		);
+
 		//#endregion
 
 		//#region Ribbon Icon Setting
