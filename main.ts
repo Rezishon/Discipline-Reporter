@@ -119,6 +119,8 @@ class Files extends Modal {
 	async OpenRoutinesTrackingFile(): Promise<void> {}
 
 	async RoutinesTrackingFileFormat(): Promise<string> {
+		let outputString: string =
+			"This is TODAY routine file.\nFor each routine put a number in the showed bracket please.\n";
 	}
 
 	async CloseRoutinesTrackingFile(): Promise<void> {
