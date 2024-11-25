@@ -111,8 +111,8 @@ class Files extends Modal {
 
 	async CreateRoutinesTrackingFile(): Promise<void> {
 		await this.app.vault.create(
-			"this is data to that file"
 			this.routinesTrackingFilePath,
+			(await this.RoutinesTrackingFileFormat()).toString()
 		);
 	}
 
