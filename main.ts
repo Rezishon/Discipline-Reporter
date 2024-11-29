@@ -121,15 +121,18 @@ export default class DisciplineReporterPlugin extends Plugin {
 class Files extends Modal {
 	setting: DisciplineReporterSettings;
 	routinesTrackingFilePath: string;
+	theDate: string[];
 
 	constructor(
 		app: App,
 		settings: DisciplineReporterSettings,
-		routinesTrackingFilePath: string
+		routinesTrackingFilePath: string,
+		TheDate: string[]
 	) {
 		super(app);
 		this.setting = settings;
 		this.routinesTrackingFilePath = routinesTrackingFilePath;
+		this.theDate = TheDate;
 	}
 
 	async CreateRoutinesTrackingFile(): Promise<void> {
