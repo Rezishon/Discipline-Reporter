@@ -64,6 +64,12 @@ export default class DisciplineReporterPlugin extends Plugin {
 			callback: () => files.CreateRoutinesTrackingFile(),
 		});
 
+		this.addCommand({
+			id: "save&close-routine-recorder-file",
+			name: "Save & close routine recorder file",
+			callback: () => files.CloseRoutinesTrackingFile(),
+		});
+
 		//#endregion
 
 		//#region Interval
