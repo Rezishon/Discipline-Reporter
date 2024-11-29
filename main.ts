@@ -153,8 +153,7 @@ class Files extends Modal {
 	}
 
 	async RoutinesTrackingFileFormat(): Promise<string> {
-		let outputString: string =
-			"This is TODAY routine file.\nFor each routine put a number in the showed bracket please.\n";
+		let outputString: string = `This is\n**${this.theDate[2]}/${this.theDate[1]}/${this.theDate[0]}**\nroutine file.\nFor each routine put a number in the showed bracket please.\n`;
 
 		this.setting["Your routines"].forEach((routine) => {
 			outputString += `- ${routine} : ()\n`.toString();
