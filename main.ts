@@ -35,7 +35,8 @@ export default class DisciplineReporterPlugin extends Plugin {
 		let files = new Files(
 			this.app,
 			this.settings,
-			routinesTrackingFilePath
+			routinesTrackingFilePath,
+			this.TodayDate()
 		);
 
 		//#endregion
