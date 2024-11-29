@@ -113,6 +113,8 @@ export default class DisciplineReporterPlugin extends Plugin {
 				year: "numeric",
 			}),
 		];
+
+		return theDateIs;
 	}
 }
 
