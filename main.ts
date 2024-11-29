@@ -144,6 +144,7 @@ class Files extends Modal {
 		} catch (error) {
 			new Notice("The routines file was created");
 		} finally {
+			this.OpenRoutinesTrackingFile();
 		}
 	}
 
