@@ -98,6 +98,9 @@ export default class DisciplineReporterPlugin extends Plugin {
 
 		await this.saveData(this.settings);
 	}
+
+	TodayDate(): string[] {
+	}
 }
 
 class Files extends Modal {
