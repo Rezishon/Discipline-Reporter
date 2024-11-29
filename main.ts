@@ -43,9 +43,7 @@ export default class DisciplineReporterPlugin extends Plugin {
 
 		//#region Ribbon Icon Setting
 
-		this.addRibbonIcon("dice", "Greet", () => {
-			files.CloseRoutinesTrackingFile();
-		});
+		this.addRibbonIcon("dice", "Greet", () => {});
 
 		//#endregion
 
