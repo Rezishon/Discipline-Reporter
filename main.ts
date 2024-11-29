@@ -142,6 +142,7 @@ class Files extends Modal {
 				(await this.RoutinesTrackingFileFormat()).toString()
 			);
 		} catch (error) {
+			new Notice("The routines file was created");
 		} finally {
 		}
 	}
