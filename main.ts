@@ -100,6 +100,7 @@ export default class DisciplineReporterPlugin extends Plugin {
 	}
 
 	TodayDate(): string[] {
+		let date = new Date();
 	}
 }
 
