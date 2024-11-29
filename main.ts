@@ -148,7 +148,9 @@ class Files extends Modal {
 		}
 	}
 
-	async OpenRoutinesTrackingFile(): Promise<void> {}
+	async OpenRoutinesTrackingFile(): Promise<void> {
+		this.app.workspace.openLinkText("", this.routinesTrackingFilePath);
+	}
 
 	async RoutinesTrackingFileFormat(): Promise<string> {
 		let outputString: string =
