@@ -101,6 +101,18 @@ export default class DisciplineReporterPlugin extends Plugin {
 
 	TodayDate(): string[] {
 		let date = new Date();
+
+		let theDateIs: string[] = [
+			date.toLocaleString(navigator.languages, {
+				day: "numeric",
+			}),
+			date.toLocaleString(navigator.languages, {
+				month: "numeric",
+			}),
+			date.toLocaleString(navigator.languages, {
+				year: "numeric",
+			}),
+		];
 	}
 }
 
