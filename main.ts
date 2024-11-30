@@ -180,6 +180,14 @@ class Files extends Modal {
 			);
 		}
 	}
+
+	async OpenRoutinesData(): Promise<object> {
+		return await this.app.vault.adapter
+			.read(this.routinesTrackingFilePath)
+			.then((response) => {
+				return JSON.parse(response);
+			});
+	}
 }
 
 // class SampleModal extends Modal {
