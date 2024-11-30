@@ -61,13 +61,13 @@ export default class DisciplineReporterPlugin extends Plugin {
 		this.addCommand({
 			id: "open-routine-recorder-file",
 			name: "Open routine recorder file",
-			callback: () => files.CreateRoutinesTrackingFile(),
+			callback: () => files.CreateRoutinesDailyTrackingFile(),
 		});
 
 		this.addCommand({
 			id: "save&close-routine-recorder-file",
 			name: "Save & close routine recorder file",
-			callback: () => files.CloseRoutinesTrackingFile(),
+			callback: () => files.CloseRoutinesDailyTrackingFile(),
 		});
 
 		//#endregion
@@ -135,24 +135,24 @@ class Files extends Modal {
 		this.theDate = TheDate;
 	}
 
-	async CreateRoutinesTrackingFile(): Promise<void> {
+	async CreateRoutinesDailyTrackingFile(): Promise<void> {
 		try {
 			await this.app.vault.create(
 				this.routinesTrackingFilePath,
-				(await this.RoutinesTrackingFileFormat()).toString()
+				(await this.RoutinesDailyTrackingFileFormat()).toString()
 			);
 		} catch (error) {
 			new Notice("The routines file was created");
 		} finally {
-			this.OpenRoutinesTrackingFile();
+			this.OpenRoutinesDailyTrackingFile();
 		}
 	}
 
-	async OpenRoutinesTrackingFile(): Promise<void> {
+	async OpenRoutinesDailyTrackingFile(): Promise<void> {
 		this.app.workspace.openLinkText("", this.routinesTrackingFilePath);
 	}
 
-	async RoutinesTrackingFileFormat(): Promise<string> {
+	async RoutinesDailyTrackingFileFormat(): Promise<string> {
 		let outputString: string = `This is\n**${this.theDate[2]}/${this.theDate[1]}/${this.theDate[0]}**\nroutine file.\nFor each routine put a number in the showed bracket please.\n`;
 
 		this.setting["Your routines"].forEach((routine) => {
@@ -162,13 +162,14 @@ class Files extends Modal {
 		return outputString;
 	}
 
-	async CloseRoutinesTrackingFile(): Promise<void> {
+	async CloseRoutinesDailyTrackingFile(): Promise<void> {
 		//* save the data in tracking file
 		//* build the report
-		this.DeleteRoutinesTrackingFile();
+		console.log(await this.OpenRoutinesData());
+		this.DeleteRoutinesDailyTrackingFile();
 	}
 
-	async DeleteRoutinesTrackingFile(): Promise<void> {
+	async DeleteRoutinesDailyTrackingFile(): Promise<void> {
 		if (
 			await this.app.vault.adapter.exists(this.routinesTrackingFilePath)
 		) {
