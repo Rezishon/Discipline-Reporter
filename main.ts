@@ -10,6 +10,11 @@ import {
 	Setting,
 } from "obsidian";
 
+var GlobalVariables = {
+	routinesDailyTrackingFilePath: "Your-Daily-Routines.md",
+	routinesDataFilePath: "Your-Data-Routines.md",
+};
+
 //#region Plugin Setting
 
 interface DisciplineReporterSettings {
