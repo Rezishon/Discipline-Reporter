@@ -36,12 +36,7 @@ export default class DisciplineReporterPlugin extends Plugin {
 		await this.loadSettings();
 		this.addSettingTab(new RoutinesInSetting(this.app, this));
 
-		let files = new Files(
-			this.app,
-			this.settings,
-			routinesTrackingFilePath,
-			this.TodayDate()
-		);
+		let files = new Files(this.app, this.settings, this.TodayDate());
 
 		//#endregion
 
@@ -124,18 +119,15 @@ export default class DisciplineReporterPlugin extends Plugin {
 
 class Files extends Modal {
 	setting: DisciplineReporterSettings;
-	routinesTrackingFilePath: string;
 	theDate: string[];
 
 	constructor(
 		app: App,
 		settings: DisciplineReporterSettings,
-		routinesTrackingFilePath: string,
 		TheDate: string[]
 	) {
 		super(app);
 		this.setting = settings;
-		this.routinesTrackingFilePath = routinesTrackingFilePath;
 		this.theDate = TheDate;
 	}
 
