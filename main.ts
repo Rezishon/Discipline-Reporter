@@ -190,6 +190,7 @@ class Files extends Modal {
 	}
 
 	async WriteRoutinesData(newValue: object): Promise<void> {
+		console.log(JSON.stringify(newValue));
 		await this.app.vault.adapter.write(
 			GlobalVariables.routinesDataFilePath,
 			JSON.stringify(newValue)
