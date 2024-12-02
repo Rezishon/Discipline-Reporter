@@ -183,6 +183,10 @@ class Files extends Modal {
 	}
 
 	async CreateRoutinesData(): Promise<void> {
+		await this.app.vault.create(
+			GlobalVariables.routinesDataFilePath,
+			JSON.stringify(new Object())
+		);
 	}
 
 	async OpenRoutinesData(): Promise<object> {
