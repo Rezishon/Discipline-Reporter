@@ -196,7 +196,7 @@ class Files extends Modal {
 // 	CreateRoutinesFile() {
 // 		this.app.vault.create("test.md", "this is a test file");
 // 		const { contentEl } = this;
-// 		contentEl.setText("Woah!");
+// 		contentEl.setText("wow!");
 // 	}
 
 // 	onClose() {
