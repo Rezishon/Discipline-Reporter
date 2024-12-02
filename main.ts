@@ -134,7 +134,7 @@ class Files extends Modal {
 	async CreateRoutinesDailyTrackingFile(): Promise<void> {
 		try {
 			await this.app.vault.create(
-				this.routinesTrackingFilePath,
+				GlobalVariables.routinesDailyTrackingFilePath,
 				(await this.RoutinesDailyTrackingFileFormat()).toString()
 			);
 		} catch (error) {
@@ -167,11 +167,13 @@ class Files extends Modal {
 
 	async DeleteRoutinesDailyTrackingFile(): Promise<void> {
 		if (
-			await this.app.vault.adapter.exists(this.routinesTrackingFilePath)
+			await this.app.vault.adapter.exists(
+				GlobalVariables.routinesDailyTrackingFilePath
+			)
 		) {
 			await this.app.vault.delete(
 				this.app.vault.getAbstractFileByPath(
-					this.routinesTrackingFilePath
+					GlobalVariables.routinesDailyTrackingFilePath
 				)!
 			);
 		}
@@ -179,7 +181,7 @@ class Files extends Modal {
 
 	async OpenRoutinesData(): Promise<object> {
 		return await this.app.vault.adapter
-			.read(this.routinesTrackingFilePath)
+			.read(GlobalVariables.routinesDataFilePath)
 			.then((response) => {
 				return JSON.parse(response);
 			});
