@@ -11,10 +11,6 @@ export var GlobalVariables = {
 	routinesDataFilePath: "Your-Data-Routines.md",
 };
 
-};
-
-
-
 export default class DisciplineReporterPlugin extends Plugin {
 	settings: DisciplineReporterSettings;
 
@@ -29,7 +25,14 @@ export default class DisciplineReporterPlugin extends Plugin {
 
 		//#region Ribbon Icon Setting
 
-		this.addRibbonIcon("dice", "Greet", () => {});
+		this.addRibbonIcon("dice", "Greet", async () => {
+			console.log(this.settings);
+			// await files.WriteRoutinesData(testData);
+			// console.log(await files.OpenRoutinesData());
+
+			// await files.EditRoutinesData();
+			// console.log(await files.OpenRoutinesData());
+		});
 
 		//#endregion
 
@@ -67,6 +70,7 @@ export default class DisciplineReporterPlugin extends Plugin {
 		//#endregion
 	}
 
+	// ! should replaced
 	TodayDate(): string[] {
 		let date = new Date();
 
