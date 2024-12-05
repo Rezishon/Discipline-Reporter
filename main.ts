@@ -102,37 +102,3 @@ export default class DisciplineReporterPlugin extends Plugin {
 // 		contentEl.empty();
 // 	}
 // }
-
-class RoutinesInSetting extends PluginSettingTab {
-	plugin: DisciplineReporterPlugin;
-
-	constructor(app: App, plugin: DisciplineReporterPlugin) {
-		super(app, plugin);
-		this.plugin = plugin;
-	}
-
-	display(): void {
-		const { containerEl } = this;
-
-		containerEl.empty();
-
-		new Setting(containerEl)
-			.setName("Your routines")
-			.setDesc('Add your routine and separate them with " , "')
-			.addText((text) =>
-				text
-					.setPlaceholder("Enter your routines")
-					.setValue(this.plugin.settings["Your routines"].join(", "))
-					.onChange((value) => {
-						this.plugin.settings["Your routines"] = value
-							.split(",")
-							.map((s) => s.trim());
-					})
-			)
-			.addButton((btn) => {
-				btn.onClick(async () => {
-					await this.plugin.saveSettings();
-				}).setIcon("save");
-			});
-	}
-}
