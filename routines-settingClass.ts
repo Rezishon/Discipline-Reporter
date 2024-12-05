@@ -1,3 +1,5 @@
+import DisciplineReporterPlugin from "main";
+import { App, PluginSettingTab, Setting } from "obsidian";
 export default class RoutinesInSetting extends PluginSettingTab {
 	settings: DisciplineReporterSettings;
 	plugin: DisciplineReporterPlugin;
