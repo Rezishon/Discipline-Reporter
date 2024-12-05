@@ -1,5 +1,14 @@
 import DisciplineReporterPlugin from "main";
 import { App, PluginSettingTab, Setting } from "obsidian";
+
+export interface DisciplineReporterSettings {
+	"Your routines": string[];
+}
+
+export const DEFAULT_SETTINGS: DisciplineReporterSettings = {
+	"Your routines": [],
+};
+
 export default class RoutinesInSetting extends PluginSettingTab {
 	settings: DisciplineReporterSettings;
 	plugin: DisciplineReporterPlugin;
