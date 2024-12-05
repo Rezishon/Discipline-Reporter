@@ -1,6 +1,17 @@
 import { GlobalVariables } from "main";
 import { App, Modal, Notice } from "obsidian";
 import { DisciplineReporterSettings } from "routines-settingClass";
+
+type RoutinesData = {
+	[routine: string]: {
+		[year: string]: {
+			[month: string]: {
+				[day: string]: number | null | undefined;
+			};
+		};
+	};
+};
+
 export default class Files extends Modal {
 	setting: DisciplineReporterSettings;
 	theDate: string[];
