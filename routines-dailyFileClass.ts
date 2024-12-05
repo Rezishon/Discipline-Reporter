@@ -1,3 +1,6 @@
+import { GlobalVariables } from "main";
+import { App, Modal, Notice } from "obsidian";
+import { DisciplineReporterSettings } from "routines-settingClass";
 export default class Files extends Modal {
 	setting: DisciplineReporterSettings;
 	theDate: string[];
