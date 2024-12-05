@@ -1,13 +1,5 @@
-import { Console } from "console";
 import {
-	App,
-	Editor,
-	MarkdownView,
-	Modal,
-	Notice,
 	Plugin,
-	PluginSettingTab,
-	Setting,
 } from "obsidian";
 
 var GlobalVariables = {
