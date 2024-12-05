@@ -7,17 +7,9 @@ var GlobalVariables = {
 	routinesDataFilePath: "Your-Data-Routines.md",
 };
 
-//#region Plugin Setting
-
-interface DisciplineReporterSettings {
-	"Your routines": string[];
-}
-
-const DEFAULT_SETTINGS: DisciplineReporterSettings = {
-	"Your routines": [],
 };
 
-//#endregion
+
 
 export default class DisciplineReporterPlugin extends Plugin {
 	settings: DisciplineReporterSettings;
