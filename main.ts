@@ -21,7 +21,6 @@ export default class DisciplineReporterPlugin extends Plugin {
 	async onload() {
 		//#region App Main Starter Jobs
 
-		await this.loadSettings();
 		this.addSettingTab(new RoutinesInSetting(this.app, this));
 
 		let files = new Files(this.app, this.settings, this.TodayDate());
@@ -66,24 +65,6 @@ export default class DisciplineReporterPlugin extends Plugin {
 		);
 
 		//#endregion
-	}
-
-	onunload() {}
-
-	async loadSettings() {
-		this.settings = Object.assign(
-			{},
-			DEFAULT_SETTINGS,
-			await this.loadData()
-		);
-	}
-
-	async saveSettings() {
-		this.settings["Your routines"] = this.settings["Your routines"].filter(
-			(x) => x.length != 0
-		);
-
-		await this.saveData(this.settings);
 	}
 
 	TodayDate(): string[] {
