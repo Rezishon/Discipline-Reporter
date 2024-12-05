@@ -6,7 +6,7 @@ import RoutinesInSetting, {
 	DisciplineReporterSettings,
 } from "routines-settingClass";
 
-var GlobalVariables = {
+export var GlobalVariables = {
 	routinesDailyTrackingFilePath: "Your-Daily-Routines.md",
 	routinesDataFilePath: "Your-Data-Routines.md",
 };
