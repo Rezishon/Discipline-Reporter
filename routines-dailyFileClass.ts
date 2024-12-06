@@ -106,12 +106,12 @@ export default class Files extends Modal {
 	}
 
 	async EditRoutinesData(): Promise<void> {
-		let data: RoutinesData = await this.OpenRoutinesData();
+		let data: _RoutinesData = await this.OpenRoutinesData();
 
 		console.log(data);
 	}
 
-	async OpenRoutinesData(): Promise<RoutinesData> {
+	async OpenRoutinesData(): Promise<_RoutinesData> {
 		return await this.app.vault.adapter
 			.read(GlobalVariables.routinesDataFilePath)
 			.then((response) => {
