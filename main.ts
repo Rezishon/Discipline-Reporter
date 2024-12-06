@@ -37,23 +37,6 @@ export default class DisciplineReporterPlugin extends Plugin {
 		//#region Status Bar Setting
 		// This adds a status bar item to the bottom of the app. Does not work on mobile apps.
 		this.addStatusBarItem().setText("Hi");
-
-		//#endregion
-
-		//#region Commands
-
-		this.addCommand({
-			id: "open-routine-recorder-file",
-			name: "Open routine recorder file",
-			callback: () => files.CreateRoutinesDailyTrackingFile(),
-		});
-
-		this.addCommand({
-			id: "save&close-routine-recorder-file",
-			name: "Save & close routine recorder file",
-			callback: () => files.CloseRoutinesDailyTrackingFile(),
-		});
-
 		//#endregion
 
 		//#region Interval
