@@ -26,20 +26,15 @@ export default class DisciplineReporterPlugin extends Plugin {
 		//#endregion
 
 		//#region Ribbon Icon Setting
-
 		this.addRibbonIcon("dice", "Greet", async () => {
-			console.log(this.settings);
 			// await files.WriteRoutinesData(testData);
 			// console.log(await files.OpenRoutinesData());
-
 			// await files.EditRoutinesData();
 			// console.log(await files.OpenRoutinesData());
 		});
-
 		//#endregion
 
 		//#region Status Bar Setting
-
 		// This adds a status bar item to the bottom of the app. Does not work on mobile apps.
 		this.addStatusBarItem().setText("Hi");
 
@@ -62,11 +57,9 @@ export default class DisciplineReporterPlugin extends Plugin {
 		//#endregion
 
 		//#region Interval
-
 		this.registerInterval(
 			window.setInterval(() => console.log("setInterval"), 5 * 60 * 1000)
 		);
-
 		//#endregion
 	}
 
