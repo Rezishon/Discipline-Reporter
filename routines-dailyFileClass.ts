@@ -13,16 +13,13 @@ type RoutinesData = {
 };
 
 export default class Files extends Modal {
-	theDate: string[];
-
-	constructor(
-		app: App,
-		TheDate: string[]
-	) {
 	private setting: _DisciplineReporterSettings;
+	private theDate: string[];
+	constructor(app: App, settings: _DisciplineReporterSettings) {
 		super(app);
 		this.setting = settings;
-		this.theDate = TheDate;
+		this.theDate = this.TodayDate();
+	}
 
 	TodayDate(): string[] {
 		let date = new Date();
