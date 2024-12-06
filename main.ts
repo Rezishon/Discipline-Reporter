@@ -45,25 +45,6 @@ export default class DisciplineReporterPlugin extends Plugin {
 		);
 		//#endregion
 	}
-
-	// ! should replaced
-	TodayDate(): string[] {
-		let date = new Date();
-
-		let theDateIs: string[] = [
-			date.toLocaleString(navigator.languages, {
-				day: "numeric",
-			}),
-			date.toLocaleString(navigator.languages, {
-				month: "numeric",
-			}),
-			date.toLocaleString(navigator.languages, {
-				year: "numeric",
-			}),
-		];
-
-		return theDateIs;
-	}
 }
 
 // class SampleModal extends Modal {
