@@ -12,6 +12,8 @@ export var GlobalVariables = {
 	routinesDataFilePath: "Your-Data-Routines.md",
 };
 
+// * hotreload plugin installed https://github.com/pjeby/hot-reload.git
+
 export default class DisciplineReporterPlugin extends Plugin {
 	settings: _DisciplineReporterSettings;
 
@@ -36,8 +38,6 @@ export default class DisciplineReporterPlugin extends Plugin {
 		});
 
 		//#endregion
-
-		//? hotreload plugin installed https://github.com/pjeby/hot-reload.git
 
 		//#region Status Bar Setting
 
