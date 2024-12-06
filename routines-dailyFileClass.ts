@@ -2,7 +2,7 @@ import { GlobalVariables } from "main";
 import { App, Modal, Notice } from "obsidian";
 import { _DisciplineReporterSettings } from "routines-settingClass";
 
-type RoutinesData = {
+interface _RoutinesData {
 	[routine: string]: {
 		[year: string]: {
 			[month: string]: {
