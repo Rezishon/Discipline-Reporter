@@ -23,6 +23,7 @@ export default class DisciplineReporterPlugin extends Plugin {
 
 		let files = new Files(this.app, this.settings, this.TodayDate());
 
+		let commands = new CommandsHandler(this, files);
 		//#endregion
 
 		//#region Ribbon Icon Setting
