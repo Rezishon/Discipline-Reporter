@@ -10,11 +10,10 @@ const DEFAULT_SETTINGS: _DisciplineReporterSettings = {
 };
 
 export default class RoutinesInSetting extends PluginSettingTab {
-	settings: DisciplineReporterSettings;
-	plugin: DisciplineReporterPlugin;
+	private plugin: DisciplineReporterPlugin;
 
-	constructor(app: App, plugin: DisciplineReporterPlugin) {
-		super(app, plugin);
+	constructor(plugin: DisciplineReporterPlugin) {
+		super(plugin.app, plugin);
 		this.plugin = plugin;
 		this.loadSettings();
 	}

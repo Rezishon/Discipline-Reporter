@@ -19,8 +19,7 @@ export default class DisciplineReporterPlugin extends Plugin {
 
 	async onload() {
 		//#region App Main Starter Jobs
-
-		this.addSettingTab(new RoutinesInSetting(this.app, this));
+		this.addSettingTab(new RoutinesInSetting(this));
 
 		let files = new Files(this.app, this.settings, this.TodayDate());
 
