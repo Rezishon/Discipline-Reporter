@@ -22,6 +22,7 @@ export default class CommandsHandler {
 		this.plugin = plugin;
 		this.files = files;
 
+		//#region Commands List
 		var commandsInfo: _CommandsInfo = {
 			Opener: {
 				id: "open-routine-recorder-file",
@@ -34,6 +35,7 @@ export default class CommandsHandler {
 				callback: () => this.files.CloseRoutinesDailyTrackingFile(),
 			},
 		};
+		//#endregion
 
 		this.CommandsBuilder(commandsInfo);
 	}
