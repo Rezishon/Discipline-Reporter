@@ -1,6 +1,5 @@
-import {
-	Plugin,
-} from "obsidian";
+import { Plugin } from "obsidian";
+import CommandsHandler from "routines-commands";
 import Files from "routines-dailyFileClass";
 import RoutinesInSetting, {
 	DisciplineReporterSettings,
