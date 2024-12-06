@@ -20,5 +20,8 @@ export default class CommandsHandler {
 	constructor(plugin: DisciplineReporterPlugin, files: Files) {
 		this.plugin = plugin;
 		this.files = files;
+
+		var commandsInfo: _CommandsInfo = {
+		};
 	}
 }
