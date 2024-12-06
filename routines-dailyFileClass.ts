@@ -2,6 +2,7 @@ import { GlobalVariables } from "main";
 import { App, Modal, Notice } from "obsidian";
 import { _DisciplineReporterSettings } from "routines-settingClass";
 
+//#region Routines data interface
 interface _RoutinesData {
 	[routine: string]: {
 		[year: string]: {
@@ -10,17 +11,24 @@ interface _RoutinesData {
 			};
 		};
 	};
-};
+}
+//#endregion
 
 export default class Files extends Modal {
+	//#region Init
 	private setting: _DisciplineReporterSettings;
 	private theDate: string[];
+	//#endregion
+
+	//#region Constructor
 	constructor(app: App, settings: _DisciplineReporterSettings) {
 		super(app);
 		this.setting = settings;
 		this.theDate = this.TodayDate();
 	}
+	//#endregion
 
+	//#region Methods of routines daily tracking file
 	TodayDate(): string[] {
 		let date = new Date();
 
@@ -89,7 +97,9 @@ export default class Files extends Modal {
 			);
 		}
 	}
+	//#endregion
 
+	//#region Methods of routines data
 	async CreateRoutinesData(): Promise<void> {
 		await this.app.vault.create(
 			GlobalVariables.routinesDataFilePath,
@@ -118,4 +128,5 @@ export default class Files extends Modal {
 				return JSON.parse(response);
 			});
 	}
+	//#endregion
 }
