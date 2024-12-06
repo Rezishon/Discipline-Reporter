@@ -1,6 +1,6 @@
 import { GlobalVariables } from "main";
 import { App, Modal, Notice } from "obsidian";
-import { DisciplineReporterSettings } from "routines-settingClass";
+import { _DisciplineReporterSettings } from "routines-settingClass";
 
 type RoutinesData = {
 	[routine: string]: {
@@ -13,14 +13,13 @@ type RoutinesData = {
 };
 
 export default class Files extends Modal {
-	setting: DisciplineReporterSettings;
 	theDate: string[];
 
 	constructor(
 		app: App,
-		settings: DisciplineReporterSettings,
 		TheDate: string[]
 	) {
+	private setting: _DisciplineReporterSettings;
 		super(app);
 		this.setting = settings;
 		this.theDate = TheDate;

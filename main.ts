@@ -3,7 +3,7 @@ import { Plugin } from "obsidian";
 import CommandsHandler from "routines-commands";
 import Files from "routines-dailyFileClass";
 import RoutinesInSetting, {
-	DisciplineReporterSettings,
+	_DisciplineReporterSettings,
 } from "routines-settingClass";
 //#endregion
 
@@ -13,7 +13,7 @@ export var GlobalVariables = {
 };
 
 export default class DisciplineReporterPlugin extends Plugin {
-	settings: DisciplineReporterSettings;
+	settings: _DisciplineReporterSettings;
 
 	async onload() {
 		//#region App Main Starter Jobs
