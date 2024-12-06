@@ -33,5 +33,7 @@ export default class CommandsHandler {
 				callback: () => this.files.CloseRoutinesDailyTrackingFile(),
 			},
 		};
+
+		this.CommandsBuilder(commandsInfo);
 	}
 }
