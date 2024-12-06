@@ -22,6 +22,16 @@ export default class CommandsHandler {
 		this.files = files;
 
 		var commandsInfo: _CommandsInfo = {
+			Opener: {
+				id: "open-routine-recorder-file",
+				name: "Open routine recorder file",
+				callback: () => this.files.CreateRoutinesDailyTrackingFile(),
+			},
+			"Save&Closer": {
+				id: "save&close-routine-recorder-file",
+				name: "Save & close routine recorder file",
+				callback: () => this.files.CloseRoutinesDailyTrackingFile(),
+			},
 		};
 	}
 }
