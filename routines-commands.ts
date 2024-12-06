@@ -12,6 +12,9 @@ interface _CommandsInfo {
 //#endregion
 
 export default class CommandsHandler {
+	//#region Init
 	private plugin: DisciplineReporterPlugin;
 	private files: Files;
+	//#endregion
+
 }
