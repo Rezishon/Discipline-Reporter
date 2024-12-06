@@ -1,9 +1,11 @@
+//#region Imports
 import { Plugin } from "obsidian";
 import CommandsHandler from "routines-commands";
 import Files from "routines-dailyFileClass";
 import RoutinesInSetting, {
 	DisciplineReporterSettings,
 } from "routines-settingClass";
+//#endregion
 
 export var GlobalVariables = {
 	routinesDailyTrackingFilePath: "Your-Daily-Routines.md",
