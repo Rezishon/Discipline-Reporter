@@ -47,7 +47,7 @@ export default class Files extends Modal {
 		return theDateIs;
 	}
 
-	async CreateRoutinesDailyTrackingFile(): Promise<void> {
+	public async CreateRoutinesDailyTrackingFile(): Promise<void> {
 		try {
 			await this.app.vault.create(
 				GlobalVariables.routinesDailyTrackingFilePath,
@@ -60,14 +60,14 @@ export default class Files extends Modal {
 		}
 	}
 
-	async OpenRoutinesDailyTrackingFile(): Promise<void> {
+	private async OpenRoutinesDailyTrackingFile(): Promise<void> {
 		this.app.workspace.openLinkText(
 			GlobalVariables.routinesDailyTrackingFilePath,
 			GlobalVariables.routinesDailyTrackingFilePath
 		);
 	}
 
-	async RoutinesDailyTrackingFileFormat(): Promise<string> {
+	private async RoutinesDailyTrackingFileFormat(): Promise<string> {
 		let outputString: string = `This is\n**${this.theDate[2]}/${this.theDate[1]}/${this.theDate[0]}**\nroutine file.\nFor each routine put a number in the showed bracket please.\n`;
 
 		this.setting["Your routines"].forEach((routine) => {
@@ -77,14 +77,14 @@ export default class Files extends Modal {
 		return outputString;
 	}
 
-	async CloseRoutinesDailyTrackingFile(): Promise<void> {
+	public async CloseRoutinesDailyTrackingFile(): Promise<void> {
 		//* save the data in tracking file
 		//* build the report
 		console.log(await this.OpenRoutinesData());
 		this.DeleteRoutinesDailyTrackingFile();
 	}
 
-	async DeleteRoutinesDailyTrackingFile(): Promise<void> {
+	private async DeleteRoutinesDailyTrackingFile(): Promise<void> {
 		if (
 			await this.app.vault.adapter.exists(
 				GlobalVariables.routinesDailyTrackingFilePath
