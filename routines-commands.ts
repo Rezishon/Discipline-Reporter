@@ -1,6 +1,7 @@
 import DisciplineReporterPlugin from "main";
 import Files from "routines-dailyFileClass";
 
+//#region Commands interface
 interface _CommandsInfo {
 	[commandNames: string]: {
 		id: string;
@@ -8,3 +9,4 @@ interface _CommandsInfo {
 		callback: () => void;
 	};
 }
+//#endregion
