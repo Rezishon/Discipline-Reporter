@@ -42,5 +42,8 @@ export default class CommandsHandler {
 	//#endregion
 
 	private async CommandsBuilder(commandsInfo: _CommandsInfo): Promise<void> {
+		for (let command in commandsInfo) {
+			this.plugin.addCommand(commandsInfo[command]);
+		}
 	}
 }
