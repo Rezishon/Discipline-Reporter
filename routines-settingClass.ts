@@ -1,6 +1,7 @@
 import DisciplineReporterPlugin from "main";
 import { App, PluginSettingTab, Setting } from "obsidian";
 
+//#region Setting interface
 export interface _DisciplineReporterSettings {
 	"Your routines": string[];
 }
@@ -8,21 +9,27 @@ export interface _DisciplineReporterSettings {
 const DEFAULT_SETTINGS: _DisciplineReporterSettings = {
 	"Your routines": [],
 };
+//#endregion
 
 export default class RoutinesInSetting extends PluginSettingTab {
+	//#region Init
 	private plugin: DisciplineReporterPlugin;
+	//#endregion
 
+	//#region Constructor
 	constructor(plugin: DisciplineReporterPlugin) {
 		super(plugin.app, plugin);
 		this.plugin = plugin;
 		this.loadSettings();
 	}
+	//#endregion
 
 	display(): void {
 		const { containerEl } = this;
 
 		containerEl.empty();
 
+		//#region Builder
 		new Setting(containerEl)
 			.setName("Your routines")
 			.setDesc('Add your routine and separate them with " , "')
@@ -41,8 +48,10 @@ export default class RoutinesInSetting extends PluginSettingTab {
 					await this.saveSettings();
 				}).setIcon("save");
 			});
+		//#endregion
 	}
 
+	//#region Method's of setting
 	async loadSettings() {
 		try {
 			this.plugin.settings = Object.assign(
@@ -62,4 +71,5 @@ export default class RoutinesInSetting extends PluginSettingTab {
 
 		await this.plugin.saveData(this.plugin.settings);
 	}
+	//#endregion
 }
