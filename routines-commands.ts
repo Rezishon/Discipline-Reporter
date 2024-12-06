@@ -10,3 +10,6 @@ interface _CommandsInfo {
 	};
 }
 //#endregion
+
+export default class CommandsHandler {
+}
