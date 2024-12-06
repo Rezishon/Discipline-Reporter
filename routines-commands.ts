@@ -17,4 +17,8 @@ export default class CommandsHandler {
 	private files: Files;
 	//#endregion
 
+	constructor(plugin: DisciplineReporterPlugin, files: Files) {
+		this.plugin = plugin;
+		this.files = files;
+	}
 }
