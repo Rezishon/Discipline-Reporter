@@ -1,5 +1,5 @@
 import DisciplineReporterPlugin from "main";
-import { App, PluginSettingTab, Setting } from "obsidian";
+import { PluginSettingTab, Setting } from "obsidian";
 
 //#region Setting interface
 export interface _DisciplineReporterSettings {
