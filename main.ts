@@ -1,10 +1,10 @@
 //#region Imports
 import { Plugin } from "obsidian";
-import CommandsHandler from "routines-commands";
-import Files from "routines-dailyFileClass";
+import CommandsHandler from "Repository/routines-commands";
+import Files from "Repository/routines-dailyFileClass";
 import RoutinesInSetting, {
 	_DisciplineReporterSettings,
-} from "routines-settingClass";
+} from "Repository/routines-settingClass";
 //#endregion
 
 export var GlobalVariables = {
