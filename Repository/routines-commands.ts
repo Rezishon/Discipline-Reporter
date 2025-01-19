@@ -1,5 +1,5 @@
 import DisciplineReporterPlugin from "main";
-import Files from "routines-dailyFileClass";
+import Files from "Repository/routines-dailyFileClass";
 
 //#region Commands interface
 interface _CommandsInfo {
@@ -23,7 +23,7 @@ export default class CommandsHandler {
 		this.files = files;
 
 		//#region Commands List
-		var commandsInfo: _CommandsInfo = {
+		const commandsInfo: _CommandsInfo = {
 			Opener: {
 				id: "open-routine-recorder-file",
 				name: "Open routine recorder file",
@@ -43,7 +43,7 @@ export default class CommandsHandler {
 
 	//#region Methods
 	private async CommandsBuilder(commandsInfo: _CommandsInfo): Promise<void> {
-		for (let command in commandsInfo) {
+		for (const command in commandsInfo) {
 			this.plugin.addCommand(commandsInfo[command]);
 		}
 	}
