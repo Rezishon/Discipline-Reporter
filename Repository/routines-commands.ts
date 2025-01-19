@@ -23,28 +23,38 @@ export default class CommandsHandler {
 		this.files = files;
 
 		//#region Commands List
-		const commandsInfo: _CommandsInfo = {
-			Opener: {
-				id: "open-routine-recorder-file",
-				name: "Open routine recorder file",
-				callback: () => this.files.CreateRoutinesDailyTrackingFile(),
-			},
-			"Save&Closer": {
-				id: "save&close-routine-recorder-file",
-				name: "Save & close routine recorder file",
-				callback: () => this.files.CloseRoutinesDailyTrackingFile(),
-			},
-		};
-		//#endregion
+		try {
+			const commandsInfo: _CommandsInfo = {
+				Opener: {
+					id: "open-routine-recorder-file",
+					name: "Open routine recorder file",
+					callback: async () =>
+						await this.files.CreateRoutinesDailyTrackingFile(),
+				},
+				"Save&Closer": {
+					id: "save&close-routine-recorder-file",
+					name: "Save & close routine recorder file",
+					callback: async () =>
+						await this.files.CloseRoutinesDailyTrackingFile(),
+				},
+			};
+			//#endregion
 
-		this.CommandsBuilder(commandsInfo);
+			this.CommandsBuilder(commandsInfo);
+		} catch (error) {
+			console.log(error);
+		}
 	}
 	//#endregion
 
 	//#region Methods
 	private async CommandsBuilder(commandsInfo: _CommandsInfo): Promise<void> {
-		for (const command in commandsInfo) {
-			this.plugin.addCommand(commandsInfo[command]);
+		try {
+			for (const command in commandsInfo) {
+				this.plugin.addCommand(commandsInfo[command]);
+			}
+		} catch (error) {
+			console.log(error);
 		}
 	}
 	//#endregion

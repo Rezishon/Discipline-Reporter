@@ -30,24 +30,30 @@ export default class RoutinesInSetting extends PluginSettingTab {
 		containerEl.empty();
 
 		//#region Builder
-		new Setting(containerEl)
 			.setName("Your routines")
 			.setDesc('Add your routine and separate them with " , "')
-			.addText((text) =>
-				text
 					.setPlaceholder("Enter your routines")
-					.setValue(this.plugin.settings["Your routines"].join(", "))
-					.onChange((value) => {
-						this.plugin.settings["Your routines"] = value
-							.split(",")
-							.map((s) => s.trim());
-					})
-			)
-			.addButton((btn) => {
-				btn.onClick(async () => {
-					await this.saveSettings();
 				}).setIcon("save");
-			});
+		try {
+			new Setting(containerEl)
+				.addText((text) =>
+					text
+						.setValue(
+							this.plugin.settings["Your routines"].join(", ")
+						)
+						.onChange((value) => {
+							this.plugin.settings["Your routines"] = value
+								.split(",")
+								.map((s) => s.trim());
+						})
+				)
+				.addButton((btn) => {
+					btn.onClick(async () => {
+						await this.saveSettings();
+				});
+		} catch (error) {
+			console.log(error);
+		}
 		//#endregion
 	}
 

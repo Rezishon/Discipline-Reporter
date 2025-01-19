@@ -1,6 +1,6 @@
 import { GlobalVariables } from "main";
 import { App, Modal, Notice } from "obsidian";
-import { _DisciplineReporterSettings } from "Repository/routines-settingClass";
+import { _DisciplineReporterSettings } from "./routines-settingClass";
 
 //#region Routines data interface
 interface _RoutinesData {
@@ -61,10 +61,14 @@ export default class Files extends Modal {
 	}
 
 	private async OpenRoutinesDailyTrackingFile(): Promise<void> {
-		this.app.workspace.openLinkText(
-			GlobalVariables.routinesDailyTrackingFilePath,
-			GlobalVariables.routinesDailyTrackingFilePath
-		);
+		try {
+			this.app.workspace.openLinkText(
+				GlobalVariables.routinesDailyTrackingFilePath,
+				GlobalVariables.routinesDailyTrackingFilePath
+			);
+		} catch (error) {
+			console.log(error);
+		}
 	}
 
 	private async RoutinesDailyTrackingFileFormat(): Promise<string> {
