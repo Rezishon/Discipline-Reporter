@@ -14,6 +14,13 @@ const DEFAULT_SETTINGS: _DisciplineReporterSettings = {
 export default class RoutinesInSetting extends PluginSettingTab {
 	//#region Init
 	private plugin: DisciplineReporterPlugin;
+	private SettingStrings = {
+		//! the setting name couldn't change in some properties
+		SettingName: "Your routines",
+		SettingDesc: 'Add your routine and separate them with " , "',
+		PlaceHolder: "Enter your routines",
+		ButtonName: "save",
+	};
 	//#endregion
 
 	//#region Constructor
@@ -30,14 +37,13 @@ export default class RoutinesInSetting extends PluginSettingTab {
 		containerEl.empty();
 
 		//#region Builder
-			.setName("Your routines")
-			.setDesc('Add your routine and separate them with " , "')
-					.setPlaceholder("Enter your routines")
-				}).setIcon("save");
 		try {
 			new Setting(containerEl)
+				.setName(this.SettingStrings.SettingName)
+				.setDesc(this.SettingStrings.SettingDesc)
 				.addText((text) =>
 					text
+						.setPlaceholder(this.SettingStrings.PlaceHolder)
 						.setValue(
 							this.plugin.settings["Your routines"].join(", ")
 						)
@@ -50,6 +56,7 @@ export default class RoutinesInSetting extends PluginSettingTab {
 				.addButton((btn) => {
 					btn.onClick(async () => {
 						await this.saveSettings();
+					}).setIcon(this.SettingStrings.ButtonName);
 				});
 		} catch (error) {
 			console.log(error);
