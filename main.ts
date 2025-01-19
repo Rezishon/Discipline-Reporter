@@ -7,7 +7,7 @@ import RoutinesInSetting, {
 } from "Repository/routines-settingClass";
 //#endregion
 
-export var GlobalVariables = {
+export const GlobalVariables = {
 	routinesDailyTrackingFilePath: "Your-Daily-Routines.md",
 	routinesDataFilePath: "Your-Data-Routines.md",
 };
@@ -21,9 +21,9 @@ export default class DisciplineReporterPlugin extends Plugin {
 		//#region App Main Starter Jobs
 		this.addSettingTab(new RoutinesInSetting(this));
 
-		let files = new Files(this.app, this.settings);
+		const files = new Files(this.app, this.settings);
 
-		let commands = new CommandsHandler(this, files);
+		new CommandsHandler(this, files);
 		//#endregion
 
 		//#region Ribbon Icon Setting

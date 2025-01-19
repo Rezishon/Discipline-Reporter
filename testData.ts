@@ -1,4 +1,4 @@
-export var testData = {
+export const testData = {
 	journal: {
 		"2024": {
 			"9": {
